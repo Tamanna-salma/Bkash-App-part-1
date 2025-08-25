@@ -25,6 +25,31 @@ document.getElementById('add-money-btn').addEventListener('click', function (eve
 
     const totalAvailableBalance = amount + availableBalance
     document.getElementById('Available-Balance').innerText = totalAvailableBalance;
+})
+
+//  Cash-out feature section**** 
+document.getElementById('Withdraw-btn').addEventListener('click',function(e){
+e.preventDefault();
+
+const agent = document.getElementById('agent-number').value;
+
+ const withdraw = parseInt(document.getElementById('withdraw-amount').value);
+
+const cashoutpin =parseInt(document.getElementById('cashout-pin').value)
+
+if(agent.length <11){
+    alert('Invalid Number')
+    return;
+}
+// if(cashoutpin !== validpin){
+//     alert('pin Invalid')
+//     return;
+
+// }
+
+ const  cashoutavailableBalance = parseInt(document.getElementById('Available-Balance').innerText);
+ const totalBalance = cashoutavailableBalance - withdraw;
+document.getElementById('Available-Balance').innerText=totalBalance;
 
 })
 
@@ -34,7 +59,6 @@ document.getElementById('add-button').addEventListener('click', function () {
   document.getElementById('cashout-parent').style.display ='none';
   document.getElementById('add-money-parent').style.display ='block'
 })
-
 
 document.getElementById('cashout-button').addEventListener('click', function () {
   document.getElementById('add-money-parent').style.display ='none';
