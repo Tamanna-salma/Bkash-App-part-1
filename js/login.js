@@ -2,7 +2,7 @@ document.getElementById('login-button').addEventListener('click',function(event)
     event.preventDefault()
 
     const mobilenumber=12345678910
-    const pinNumber = 5678
+    const pinNumber = 1234;
     // input number
     const getNumbervalue = document.getElementById('Mobile-Number').value
     const numberConverted = parseInt(getNumbervalue);
